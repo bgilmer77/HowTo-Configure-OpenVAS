@@ -78,8 +78,12 @@ For that reason it is common practice to create a regular user and login as this
 
 **Disable GNOME desktop screen saver and sleep mode**
 
-During long-running OpenVAS scans, we found that the sleep mode paused the scans, which was unacceptable for unattended scanning.
-We also preferred to turn off the screen manually rather than having the system go into screen saver mode.
+During long-running scans we found that the sleep mode paused the scans.
+This was quite frustrating.
+One would assume that a scan would need to run for several hours, but when you came back you would find that the scan had pauses, and needed to be restarted.
+This proved to be unacceptable When scanning a large number of systems.
+The instructions below also turn off the screen saver because we preferred not to have the screen go blank during long-running scans.
+If you prefer not to disable the screen saver, then omit the instructions in this section referring to "blanking" the screen.
 
 Note that if you are still logged in as `root` but have created a normal user by following the instructions above, you should now log in as that normal user so that the changes below are put into effect for that user.
 
@@ -238,7 +242,7 @@ Import the keys into gnupg
 	
 ##Install recommended packages
 
-'root:kali:~# apt install rpm nsis alien			
+'root:kali:~# apt install rpm nsis alien`			
 
 ## Check your setup using `openvas-check-setup` - a script that is provided as part of the OpenVAS package.
 
@@ -257,9 +261,11 @@ Then run `openvas-check-setup`
 
 ## Create OpenVAS users as required
 
-OpenVAS supports the creation of a number of accounts.  These accounts are used to log into the OpenVAS user interface.  Scan information is collected and stored on a per-user basis.
+OpenVAS supports the creation of a number of accounts.  These accounts are used to log into the OpenVAS user interface.
+Scan information is collected and stored on a per-user basis.
 
-<!-- ToDo check to see if the "roles" fucnction allows people to view but not change data from another account.  Also how do two "master" accounts interact?  How do you assign a viewer user to a particular "master" account? -->
+OpenVAS supports full-featured user management and will allow you to configure some users who can create and run scans, and other users who can only view scan results.  Advanced user configuration is not covered in this HowTo.
+
 
 ```
 root@kali:~# openvasmd --get-users
@@ -270,22 +276,18 @@ root@kali:~# openvasmd --user=dookie --new-password=secret
 Congratulations - at this point, OpenVAS is installed and configured.  That said, it is not running when you first boot the machine, and you do not have the most current set of Network Vulnerability Tests (NVTs) installed.  You can use the following commands to start and stop OpenVAS.  See below for how to update your NVTs.
 
 ## Starting and stopping OpenVAS
+
+Note that you will need to be `root` in order to execute these commands.
+
 ```
 root@kali:~# openvas-start
 root@kali:~# openvas-stop
 ```	
 
-If you want OpenVAS to start automatically on boot,
+Note that we do not recommend starting OpenVAS on boot for two reasons.
+First, OpenVAS consumes a lot of resources; of course this will not matter if you are running on a dedicated machine.
+Second, OpenVAS is a powerful system that we prefer to enable only when needed rather than leaving it running where some other user might find it, break into the system, and then use it to scan our devices.
 
-`root@kali:~# 
-	
-<!-- ToDo: check on starting Kali OpenVAS on boot -->
-
-To restart the OpenVAS services (there are three of them...)
-
-`root@kali:~# service openvas-scanner restart
-	
-<!-- ToDo: Check this to ensure it works -->
 
 To check that OpenVAS is running,
 
@@ -302,6 +304,8 @@ root      37864  25921  0 02:01 pts/1    00:00:00 grep --color=auto openvas
 ```
 
 ## Updating OpenVAS Network Vulnerability Tests (NVTs)
+
+
 Once it is installed, the OpenVAS application will be updated when the system us updated, either manually or automatically.
 Both methods are described above.
 Note that updating OpenVAS does **not** update the NVTs.
