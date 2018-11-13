@@ -62,6 +62,9 @@ Follow these directions to install it and to clear the held back upgrades.
 
 Note - if you get a message that apt "Could not get lock", this means that the automatic update process is already running.  You will need to either kill the process or wait until it completes before you can execute the commands above.
 
+## Install VirtualBox Guest Additions (Only if running on VirtualBox)
+'root@kali:~# apt install virtualbox-guest-x11
+
 ## Add a regular user with `sudo` access
 It is wise not to regularly log into any Linux system as `root`.
 Logging in as a regular user will keep you from performing potentially damaging functions by mistake.
