@@ -114,7 +114,7 @@ You will be asked for your normal user's password and then be given the `#` root
 
 ```
 root@kali:~# systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-root@kali:~# systemctl restart systemd-logind.service or reboot
+root@kali:~# reboot
 ```
 	
 To re-enable hibernation, enter the commands above, but use `unmask` instead of `mask`
