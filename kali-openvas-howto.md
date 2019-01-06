@@ -158,31 +158,6 @@ To start `xrdp` on boot,
 
 `root@kali:~# update-rc.d xrdp enable`
 
-GNOME pops up a message about entering a password to set a color profile once `xrdp` is installed.
-To prevent this you will need to create the file as shown below.
-We prefer `vi`, but you can also use `nano`, or any of the other editors that are frequently found on Linux systems.
-
-`root@kali:~# vi /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf`
-
-Add the following lines at the end of the file,
-
-```
-polkit.addRule(function(action, subject) {
-  if ((action.id == "org.freedesktop.color-manager.create-device"  ||
-    action.id == "org.freedesktop.color-manager.create-profile" ||
-    action.id == "org.freedesktop.color-manager.delete-device"  ||
-    action.id == "org.freedesktop.color-manager.delete-profile" ||
-    action.id == "org.freedesktop.color-manager.modify-device"  ||
-    action.id == "org.freedesktop.color-manager.modify-profile"
-    ) && (
-      subject.isInGroup("{nogroup}")
-    )
-  )
-  {
-    return polkit.Result.YES;
-  }
-});
-```
 
 ## Install OpenVAS
 OpenVAS is part of the Kali distribution, but it is not installed by default.
