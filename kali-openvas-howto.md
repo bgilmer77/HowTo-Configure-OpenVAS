@@ -48,6 +48,8 @@ Note - this may take a *long* time.
 +	use `apt` to get an updated list of available packages and then install updates
 
 `root@kali:~# apt update && apt upgrade -y`
+**Note! During the upgrade, `wireshark-common` may pop up a dialog box asking if users other than `root` should be able to capture packets.
+Be sure to answer "yes" to this since Openvas runs under the user `openvas`.
 `root@kali:~# apt autoclean`
 `root@kali:~# reboot`
 
