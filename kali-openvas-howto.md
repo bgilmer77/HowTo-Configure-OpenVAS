@@ -2,27 +2,28 @@
 
 ## Installing Kali Linux and OpenVAS optimized for the vulnerability scanning of professional media systems
 
-A few notes before we start-
-
-HowTos rot - especially security HowTos.
-This HowTo is written for Kali Linux Rolling Distribution as of February, 2020.
+This HowTo will tell you how to install Kali Linux and the OpenVAS security vulnerability scanner.
+It is current as of February, 2020.
 If you find that it is out of date, feel free to submit an Issue or a PR.
 
+OpenVAS is one of a class of programs that scan systems automatically, looking for known security vulnerabilities.
+It is being used by the Joint Task Force on Networked Media (JT-NM) as one of the tools in our JT-NM Tested program.  See the [JT-NM](http://jt-nm.org) website for more information. 
+
+
 This HowTo is written to go along-side an article that explains how OpenVas may be used to scan professional media systems and applications.
-Also, this configuration was used to obtain the results that were presented at the 2018 IP Showcase by Brad Gilmer.
+This configuration was used to obtain the results that were presented at the 2018 IP Showcase by Brad Gilmer.
 A video of that presentation is available on [the VSF YouTube channel](https://www.youtube.com/watch?v=dqnzuCK4poY).
+Since then, the same software has been used to test systems at a number of JT-NM Tested events.
+Vendors are encouraged to follow this HowTo in order to create their own scanner which may be used as part of their own internal QA programs.
+
 
 This HowTo assumes that the reader is familiar with installing Linux distributions from ISO files.
 If you are not familiar with this, we suggest you experiment with [installing Ubuntu Server from an ISO file](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-server#0).
-We suggest this because there are a great number of tutorials and other documentation for this variant of Linux, and because the process of installing Ubuntu Server is quite similar to the process of installing Kail, but better documented.
 
-This HowTo is optimized for the use of OpenVas.
-While one can load OpenVas on many operating systems directly, we have found that the best way to get predictable results and to avoid frustration is to start with a clean system, and to install Kali, which includes OpenVas as part of the distribution.
-
-Kali may be installed in a VM, and indeed, some distributions of Kali are specifically in "ready-to-go" VM forms.
-While it is absolutely possible to get a reliable version of Kali and OpenVAS running, we found that it took quite a bit of "fiddling" to get to where the installation was reliable.
+Kali may be installed using a VM.  However, for a number of reasons, we have found it easier to install Kali directly on a hard disk.
 Therefore we are recommending a stand-alone configuration on a small system such as an Intel NUC using Kali as the only operating system.
-VM installations work perfectly fine if you want to experiment with OpenVAS, but for long-running, intense scans touching a large number of systems, we have found that a stand-alone box is best.
+VM installations work well for experimentation.
+But for long-running, intense scans touching a large number of systems, we have found that a stand-alone installation is best.
 
 ## Install Kali Linux
 
