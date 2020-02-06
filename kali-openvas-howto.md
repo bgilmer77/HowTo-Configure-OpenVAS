@@ -10,7 +10,7 @@ OpenVAS is one of a class of programs that scan systems automatically, looking f
 It is being used by the Joint Task Force on Networked Media (JT-NM) as one of the tools in our JT-NM Tested program.  See the [JT-NM](http://jt-nm.org) website for more information. 
 
 
-To learn more about how to use OpenVAS and NMAP with the JT-NM Cybersecurity test plan, please watch [this PowerPoint presentation](https://youtu.be/aACjJCJNdDw) on the VSF YouTube channel.  
+To learn more about how to use OpenVAS and NMAP with the JT-NM Cybersecurity test plan, please watch [this PowerPoint presentation](https://youtu.be/9F9kXi_fu8o) on the VSF YouTube channel.  
 To see how previous tests were conducted and how results were compiled, you might want to watch a [presentation given by Brad Gilmer] at the 2018 IBC IP Showcase.
 A video of that presentation is available on [the VSF YouTube channel](https://www.youtube.com/watch?v=dqnzuCK4poY).
 Since then, the same software has been used to test systems at a number of JT-NM Tested events.
