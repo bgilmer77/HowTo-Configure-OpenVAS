@@ -277,6 +277,10 @@ While it is possible to run scans using a command line, you probably will want t
 By default, OpenVAS is configured to only listen on the loopback address of `127.0.0.1`.
 As such, it is unreachable "from the outside".
 We have found that the most convenient way to access the scanner is using remote desktop and `xrdp` which you should have installed earlier in this process.
+
+NOTE: The instructions below used to allow one to access the OpenVAS webpage from a remote computer.  However, it appears that now the --allow-header-host flag has been removed.  As a consequence, these instructions no longer work.  If you figure out how to access the OpenVAS web page without using localhost, please post an Issue or PR here.
+
+*The Instructions Below Are Old And Do Not Appear To Work*
 While it is possible to configure OpenVAS so that it listens on all IP addresses (e.g. `--listen=0.0.0.0`), you still cannot access the OpenVAS web page from an outside IP address unless you tell OpenVAS the IP address of the machine you are wanting to control it from (`--allow-header-host xxx.xxx.xxx`).
 Unless you are going to be accessing OpenVAS from a machine wth a static IP address, it is much easier to access Kali from an RDP client, and then open the OpenVAS web page on the local machine with a browser pointed to localhost.
 That said, if for some reason you still wish to access the OpenVAS web page remotely, below you will find the information you need to enable this.
