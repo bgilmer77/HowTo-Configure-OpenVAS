@@ -4,7 +4,11 @@
 
 This article describes how to install Kali Linux and the OpenVAS security vulnerability scanner.
 It is current as of February, 2020.
-If you find that it is out of date, feel free to submit an Issue or a PR.
+The article assumes you will be installing Kali on a bare metal system.  
+Kali is also available as a USB Live Boot system, as a client on a virtualized system, and as a Docker container.  
+These instructions will work for all of those installations as well.
+If you are not performing a bare metal install, you may wish to skip the section titled "Installing Kali Linux".
+If you find that this document is out of date, feel free to submit an Issue or a PR.
 
 OpenVAS is one of a class of programs that scan systems automatically, looking for known security vulnerabilities.
 It is being used by the Joint Task Force on Networked Media (JT-NM) as one of the tools in our JT-NM Tested program.  See the [JT-NM](http://jt-nm.org) website for more information. 
