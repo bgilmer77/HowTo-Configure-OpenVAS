@@ -59,7 +59,7 @@ In some cases, it may be more convenient to complete the steps below using remot
 Many of the configuration commands below must be run as `root`.  You can use the `sudo` command to gain `root` privileges.  It is a best practice to only use this when necessary to avoid damaging your system or introducing security risks.
 
 To change to the `root` user, enter the following command:
-`kali@kali:-$ sudo su -`
+`kali@kali:-$ sudo -i`
 
 **Enable SSH**
 
@@ -136,11 +136,10 @@ Be sure to answer "yes" to this since Openvas runs under the user `openvas`.
 Optional-
 Sometimes you may get the message that some of the upgrades have been "held back".
 In this case, `apt` may not install these packages.
-Instead you can use `aptitude`, although it is not installed by default.
-Follow these directions to install it and to clear the held back upgrades.
 
-`root@kali:~# apt install aptitude`
-`root@kali:~# aptitude upgrade`
+Try entering the following command:
+
+`apt dist-upgrade -y`
 
 Note - if you get a message that apt "Could not get lock", this means that the automatic update process is already running.  You will need to either kill the process or wait until it completes before you can execute the commands above.
 
@@ -263,12 +262,13 @@ root      37864  25921  0 02:01 pts/1    00:00:00 grep --color=auto openvas
 
 ## Updating OpenVAS Network Vulnerability Tests (NVTs)
 
-
 Once it is installed, the OpenVAS application will be updated when the system is updated, either manually or automatically.
 Both methods are described above.
 Note that updating OpenVAS does **not** update the NVTs.
+
+When you install OpenVAS the `openvas-setup` script fetches the latest NVTs.
+However, new NVTs are added frequently.
 To get the latest NVTs, execute the `openvas-feed-update` script.
-It can take a long time for this script to complete the first time you run it.
 
 `root@kali:~# openvas-feed-update`
 
