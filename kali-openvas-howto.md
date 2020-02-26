@@ -5,8 +5,10 @@
 This article describes how to install Kali Linux and the OpenVAS security vulnerability scanner.
 It is current as of February, 2020.
 The article assumes you will be installing Kali on a bare metal system.  
-Kali is also available as a USB Live Boot system, as a client on a virtualized system, and as a Docker container.  
-These instructions will work for all of those installations as well.
+Kali is also available on a number of other Linux distributions, as a USB Live Boot system, as a client on a virtualized system, and as a Docker container.  
+You can get more information on OpenVAS at [openvas.org](https://www.openvas.org).
+
+
 If you are not performing a bare metal install, you may wish to skip the section titled "Installing Kali Linux".
 If you find that this document is out of date, feel free to submit an Issue or a PR.
 
